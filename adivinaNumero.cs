@@ -1,3 +1,7 @@
+
+
+using System.ComponentModel;
+
 class Program
 {
     static void Main(string[] args)
@@ -15,8 +19,16 @@ class Program
 
         do{
             intentos++;
-
-            minumero = int.Parse(Console.ReadLine());
+            try
+            {
+                minumero = int.Parse(Console.ReadLine());
+            }
+            catch(FormatException ex)
+            {
+                Console.WriteLine("Entrada no valida. Se establecerá en 0");
+                minumero = 0;
+            }
+           
 
             if (minumero > aleatorio) Console.WriteLine("El número es más bajo");
             if (minumero < aleatorio) Console.WriteLine("El número es menos bajo");
