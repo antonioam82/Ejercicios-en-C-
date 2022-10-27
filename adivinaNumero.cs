@@ -23,6 +23,7 @@ class Program
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 Console.WriteLine("Hubo un problema con el valor introducido. Se establecerá en 0");
                 minumero = 0;
             }
