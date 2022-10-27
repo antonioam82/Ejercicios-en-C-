@@ -21,13 +21,9 @@ class Program
             {
                 minumero = int.Parse(Console.ReadLine());
             }
-            catch(FormatException ex)
+            catch(Exception ex)
             {
-                Console.WriteLine("Entrada no valida. Se establecerá en 0");
-                minumero = 0;
-            }catch(OverflowException ex)
-            {
-                Console.WriteLine("El valor introducido es demasiado alto. Se establecerá en 0");
+                Console.WriteLine("Hubo un problema con el valor introducido. Se establecerá en 0");
                 minumero = 0;
             }
            
@@ -39,5 +35,4 @@ class Program
             Console.WriteLine($"Lo has conseguido en {intentos} intentos");
     }
 }
-
 
