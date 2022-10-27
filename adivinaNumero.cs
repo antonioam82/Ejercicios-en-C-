@@ -1,5 +1,3 @@
-
-
 using System.ComponentModel;
 
 class Program
@@ -27,13 +25,19 @@ class Program
             {
                 Console.WriteLine("Entrada no valida. Se establecerá en 0");
                 minumero = 0;
+            }catch(OverflowException ex)
+            {
+                Console.WriteLine("El valor introducido es demasiado alto. Se establecerá en 0");
+                minumero = 0;
             }
            
 
             if (minumero > aleatorio) Console.WriteLine("El número es más bajo");
-            if (minumero < aleatorio) Console.WriteLine("El número es menos bajo");
+            if (minumero < aleatorio) Console.WriteLine("El número es más alto");
 
         } while (aleatorio != minumero);
             Console.WriteLine($"Lo has conseguido en {intentos} intentos");
     }
 }
+
+
