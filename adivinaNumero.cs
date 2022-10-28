@@ -21,10 +21,15 @@ class Program
             {
                 minumero = int.Parse(Console.ReadLine());
             }
+            catch(FormatException ex)
+            {
+                Console.WriteLine("Introduzca un valor numerico entre 0 y 100 (el valor actual es 0).");
+                minumero = 0;
+            }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("Hubo un problema con el valor introducido. Se establecerá en 0");
+                Console.WriteLine("Hubo un problema con la información introducida (el valor actual es 0)");
                 minumero = 0;
             }
            
