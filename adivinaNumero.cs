@@ -5,11 +5,8 @@ class Program
     static void Main(string[] args)
     {
         Random numero = new Random();
-
         int aleatorio = numero.Next(0, 100);
-
         int minumero;
-
         int intentos = 0;
 
         Console.WriteLine("Introduce un número entre 0 y 100:");
@@ -21,15 +18,16 @@ class Program
             {
                 minumero = int.Parse(Console.ReadLine());
             }
-            catch(FormatException ex)
-            {
-                Console.WriteLine("Introduzca un valor numerico entre 0 y 100 (el valor actual es 0).");
-                minumero = 0;
-            }
-            catch(Exception ex)
+            catch(Exception ex) when (ex.GetType() != typeof(FormatException))
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine("Hubo un problema con la información introducida (el valor actual es 0)");
+                minumero = 0;
+            }
+            catch(FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Introduzca valor nemrico entre 0 y 100");
                 minumero = 0;
             }
            
