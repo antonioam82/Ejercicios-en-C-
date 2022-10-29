@@ -43,11 +43,14 @@ class Program
             } while (aleatorio != minumero);
             Console.WriteLine($"Lo has conseguido en {intentos} intentos");
             intentos = 0;
-            aleatorio = numero.Next(0, 100);
+            
             Console.WriteLine("¿Desea continuar?:");
             continuar = Console.ReadLine();
+            if(continuar == "Y")
+            {
+                aleatorio = numero.Next(0, 100);
+            }
 
         } while (continuar == "Y");
     }
 }
-
